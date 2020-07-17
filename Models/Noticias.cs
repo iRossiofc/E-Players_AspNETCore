@@ -14,16 +14,27 @@ namespace E_Players.Models
 
         private const string PATH = "Database/noticias.csv";
 
+        /// <summary>
+        /// metodo contrutor chamando metodo do EplayersBase para criar a pasta e diretorio
+        /// </summary>
         public Noticias(){
             CreateFolderAndFile(PATH);
         }
 
+        /// <summary>
+        /// metodo para criar as linhas
+        /// </summary>
+        /// <param name="n"></param>
         public void Create(Noticias n)
         {
             string[] linha = {PreparLinha(n)};
             File.AppendAllLines(PATH, linha);
         }
 
+        /// <summary>
+        /// metodo para deletar linhas
+        /// </summary>
+        /// <param name="idNoticias"></param>
         public void Delete(int idNoticias)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -31,6 +42,10 @@ namespace E_Players.Models
             RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// metodo para ler todas as linhas
+        /// </summary>
+        /// <returns>retorna uma lista mostrando todas as linhas</returns>
         public List<Noticias> ReadAll()
         {
              List<Noticias> noticias = new List<Noticias>();
@@ -49,6 +64,10 @@ namespace E_Players.Models
             return noticias;
         }
 
+        /// <summary>
+        /// metodo para alterar as linhas
+        /// </summary>
+        /// <param name="e"></param>
         public void Update(Noticias n)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -57,6 +76,11 @@ namespace E_Players.Models
             RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// metodo para preparar as linhas
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns>retorna a linha com os dados devidamente preparados</returns>
         private string PreparLinha(Noticias n){
             return $"{n.IdNoticias};{n.Titulo};{n.Texto};{n.Imagem}";
         }

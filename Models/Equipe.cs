@@ -21,17 +21,29 @@ namespace E_Players.Models
             CreateFolderAndFile(PATH);
         }
 
+        /// <summary>
+        /// metodo para criar as linhas
+        /// </summary>
+        /// <param name="e"></param>
         public void Create(Equipe e)
         {
             string[] linha = {PreparLinha(e)};
             File.AppendAllLines(PATH, linha);
         }
         
+        /// <summary>
+        /// metodo para preparar as linhas
+        /// </summary>
+        /// <param name="e"></param>
+        /// <returns>retorna a linha com os dados devidamente preparados</returns>
         private string PreparLinha(Equipe e){
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
 
-
+        /// <summary>
+        /// metodo para deletar linhas
+        /// </summary>
+        /// <param name="idEquipe"></param>
         public void Delete(int idEquipe)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
@@ -39,6 +51,10 @@ namespace E_Players.Models
             RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// metodo para ler todas as linhas
+        /// </summary>
+        /// <returns>retorna uma lista mostrando todas as linhas</returns>
         public List<Equipe> ReadAll()
         {
             List<Equipe> equipes = new List<Equipe>();
@@ -56,6 +72,10 @@ namespace E_Players.Models
             return equipes;
         }
 
+        /// <summary>
+        /// metodo para alterar as linhas
+        /// </summary>
+        /// <param name="e"></param>
         public void Update(Equipe e)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
