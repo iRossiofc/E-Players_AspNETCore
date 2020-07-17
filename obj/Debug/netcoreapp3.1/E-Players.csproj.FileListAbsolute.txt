@@ -36,3 +36,4 @@ C:\Users\positivo\Documents\projetos\4° sprint\E-Players\obj\Debug\netcoreapp3.
 C:\Users\positivo\Documents\projetos\4° sprint\E-Players\obj\Debug\netcoreapp3.1\E-Players.genruntimeconfig.cache
 C:\Users\positivo\Documents\projetos\4° sprint\E-Players\obj\Debug\netcoreapp3.1\E-Players.csproj.CopyComplete
 C:\Users\positivo\Documents\projetos\4° sprint\E-Players\obj\Debug\netcoreapp3.1\Razor\Views\Equipe\Index.cshtml.g.cs
+C:\Users\positivo\Documents\projetos\4° sprint\E-Players\obj\Debug\netcoreapp3.1\Razor\Views\Noticias\Index.cshtml.g.cs
