@@ -23,13 +23,19 @@
         <th>Id</th>
         <th>Nome</th>
         <th>Imagem</th>
+        <th>Ações</th>
     </thead>
     <tbody>
         @foreach (var item in  ViewBag.Equipes){
             <tr>
                 <td>@item.IdEquipe</td>
                 <td>@item.Nome</td>
-                <td>@item.Imagem</td>
+                <td>
+                    <img src="img/Equipes/@item.Imagem" alt="Imagens da equipe @item.Nome">
+                </td>
+                <td>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@item.IdEquipe">Excluir</a>
+                </td>
             </tr>
         }
     </tbody>

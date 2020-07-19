@@ -34,7 +34,12 @@
                 <td>@item.IdNoticias</td>
                 <td>@item.Titulo</td>
                 <td>@item.Texto</td>
-                <td>@item.Imagem</td>
+                <td>
+                    <img src="img/Noticias/@item.Imagem" alt="Imagens da noticia @item.Titulo">
+                </td>
+                <td>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Noticias" asp-action="Excluir" asp-route-id="@item.IdNoticias">Excluir</a>
+                </td>
             </tr>
         }
     </tbody>

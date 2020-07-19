@@ -60,5 +60,11 @@ namespace E_Players.Controllers
 
             return LocalRedirect("~/Equipe");
         }   
+
+        [Route("Equipe/{id}")]
+        public IActionResult Excluir(int id){
+            equipeModel.Delete(id);
+            return LocalRedirect("~/Equipe");
+        }
     }
 }
