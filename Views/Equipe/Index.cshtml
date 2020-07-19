@@ -3,16 +3,16 @@
     ViewData["Title"] = "Equipe";
 }
 
-<form action="@Url.Action("Cadastrar")" method="post">
+<form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
 
     <label for="IdEquipe">IdEquipe</label>
-    <input tye="text" name="IdEquipe" id="IdEquipe">
+    <input type="text" name="IdEquipe" id="IdEquipe">
 
     <label for="Nome">Nome</label>
-    <input tye="text" name="Nome" id="Nome">
+    <input type="text" name="Nome" id="Nome">
 
     <label for="Imagem">Imagem</label>
-    <input tye="text" name="Imagem" id="Imagem">
+    <input type="file" name="Imagem" id="Imagem">
 
     <button type="submit">Cadastrar</button>
 
