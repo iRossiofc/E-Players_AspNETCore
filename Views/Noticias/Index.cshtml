@@ -3,21 +3,33 @@
     ViewData["Title"] = "Noticias";
 }
 
-<form action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
+<div class="titulo_pagina">
+    <h1>cadastro de @ViewData["Title"]</h1>
+</div>
 
+<form class="cadastro" action="@Url.Action("Cadastrar")" method="post" enctype="multipart/form-data">
+    <div class="campo">
     <label for="IdNoticias">IdNoticias</label>
     <input type="text" name="IdNoticias" id="IdNoticias">
+    </div>
 
+    <div class="campo">
     <label for="Titulo">Titulo</label>
     <input type="text" name="Titulo" id="Titulo">
+    </div>
 
+    <div class="campo">
     <label for="Texto">Texto</label>
     <input type="text" name="Texto" id="Texto">
+    </div>
 
+    <div class="campo">
     <label for="Imagem">Imagem</label>
     <input type="file" name="Imagem" id="Imagem">
+    </div>
 
-    <button type="submit">Cadastrar</button>
+
+    <button class="gradient btn" type="submit">Cadastrar</button>
 
 </form>
 
@@ -38,7 +50,7 @@
                     <img src="img/Noticias/@item.Imagem" alt="Imagens da noticia @item.Titulo">
                 </td>
                 <td>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Noticias" asp-action="Excluir" asp-route-id="@item.IdNoticias">Excluir</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Noticias" asp-action="Excluir" asp-route-id="@item.IdNoticias"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
         }
